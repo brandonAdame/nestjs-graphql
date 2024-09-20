@@ -4,6 +4,7 @@
 
 type Mutation {
   addNewUser(newUser: NewUserInput!): User!
+  authenticateAppUser(email: String!, pwd: String!): String!
   deleteAllUsers: Boolean!
   deleteUser(id: String!): Boolean!
 }
@@ -19,7 +20,7 @@ type Query {
   getUserById(id: String!): User!
 }
 
-"""users"""
+"""user"""
 type User {
   age: Int!
   createdDate: String!

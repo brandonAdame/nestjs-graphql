@@ -20,7 +20,7 @@ export class UserResolver {
 
   @Query((returns) => [User])
   async findAllUsers() {
-    return this.userService.findAllUsers();
+    return await this.userService.findAllUsers();
   }
 
   @Mutation((returns) => User)
@@ -32,11 +32,11 @@ export class UserResolver {
 
   @Mutation((returns) => Boolean)
   async deleteUser(@Args('id') id: string): Promise<boolean> {
-    return this.userService.deleteRecordById(id);
+    return await this.userService.deleteRecordById(id);
   }
 
   @Mutation((returns) => Boolean)
   async deleteAllUsers(): Promise<boolean> {
-    return this.userService.deleteAllRecords();
+    return await this.userService.deleteAllRecords();
   }
 }
